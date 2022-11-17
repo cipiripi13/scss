@@ -1,0 +1,25 @@
+@import 'varibles';
+@import 'mixins';
+
+
+
+nav {
+    border: 1px solid black;
+    ul{
+        background-color: red;
+        border: 2px dashed purple;
+        margin: 10px;
+    }
+    p{
+        color: $dark-purple;
+        border: 1px dotted green;
+        background-color: $bckgr-parag
+    }
+}
+
+div{
+    p{
+        @include text-shadow;
+        @include box-shadow;
+    }
+}

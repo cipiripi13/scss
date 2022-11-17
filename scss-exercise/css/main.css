@@ -1,0 +1,17 @@
+nav {
+  border: 1px solid black; }
+  nav ul {
+    background-color: red;
+    border: 2px dashed purple;
+    margin: 10px; }
+  nav p {
+    color: #53063a;
+    border: 1px dotted green;
+    background-color: #bdb21c; }
+
+div p {
+  text-shadow: 2px 2px #ff0000;
+  border: 1px solid black;
+  box-shadow: 5px 10px; }
+
+/*# sourceMappingURL=main.css.map */
