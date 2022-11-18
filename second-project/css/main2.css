@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #4444b8;
+  color: #fff; }
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto; }
+  .main .main-paragraph {
+    /*& stavljamo u viticastu kako bi obelezip p unutar svog roditelja sa klasom main*/
+    font-weight: 700; }
+    .main .main-paragraph:hover {
+      /*gnjezdimo sto znaci d OVO & se odnosi na hover nad tim p*/
+      color: pink; }
+
+/*# sourceMappingURL=main2.css.map */
