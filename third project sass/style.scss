@@ -1,0 +1,233 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@100&family=Open+Sans:wght@300;400&display=swap');
+
+$bodyFont: 'Open Sans', sans-serif;
+$headingsFont: 'Caveat', cursive;
+$font: 16px;
+$white: #fff;
+$orange: orangered;
+$lightGray: #eee;
+$gray: #444;
+$padding: 70px 0;
+$transition: .3s ease;
+
+@mixin btn {
+    padding: 15px 30px;
+    background: $orange;
+    margin-top: 30px;
+    font-size: 1rem;
+    border: none;
+    text-transform: none;
+    &:hover {
+        cursor: pointer;
+        background: $gray;
+        color: $white;
+        transition: $transition;
+    }
+
+}
+@mixin pozadinskeSlike {
+    background-position: center;
+    background-size: cover ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    text-align: center;
+}
+
+body {
+ font-family: $bodyFont;
+ background-color: $lightGray;
+ color:$gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingsFont;
+    line-height: 1;
+}
+.underline {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 2px;
+    background: $orange ;
+    margin: 30px auto 0 auto;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    @media (max-width: 768px){
+        width: 90%;
+    }
+}
+
+/*HEADER STYLE*/ 
+
+header {
+    background-image: linear-gradient(rgba(0,0, 0, .5), rgba(0,0,0, .5) ), url(./img/header.jpg);
+    height: 100vh;
+    @include pozadinskeSlike;
+    @media (max-width: 768px){
+        height: 70vh;
+    }
+
+    p{
+        font-size: 2rem;
+        font-weight: 300;
+        @media (max-width: 768px){
+            font-size: 1.6rem;
+         }
+        &::after {  /*ubacujem pseudoklasu after, da ova pravila idu odmah u okviru naseg paragrafa*/
+            @extend .underline; /*extend u ovom slucaju nasledjuje sve vrednosti klase underline*/
+            /*kako ne bismo 100 puta pisali iste linije koda, na ovaj nacin kazemo samo da nasledi odredjena svojstva*/
+        }
+    }
+       
+    h1{
+        font-size: 7rem;
+        @media (max-width: 768px){
+           font-size: 3rem;
+        }
+    }
+}
+
+/********************
+*********************UVOD****************************/ 
+
+.uvod {
+    display: flex;
+    justify-content: space-between; /*razmak izmedju ta dva diva*/
+    padding: $padding;
+    text-align: center; /*centririamo sav tekst unutar te sekcije sa klasom uvod*/
+    flex-wrap: wrap;
+    article {
+        flex: 0 0 48%;
+        /*flex-grow 0, flex-shrink 0, flex-basisis 48%*/
+        @media (max-width: 768px){
+            flex: 0 0 100%;
+         }
+        img{
+            width: 100%;  /*slikama podesimo 100% roditeljske sirine, tako izbegavmo da slike idu vise od sirine kontejnera*/
+        }
+        .text {
+            background: $white;
+            padding: 40px;  /* kako bi se belina prostora u kome se nalazi tekst povecala*/
+            position: relative;
+            top: -15px;
+                h4 {
+                margin: 20px 0;
+                font-size: 1.2rem;
+                font-family: $bodyFont;
+                font-weight: 300;
+                    &::after {  
+                        @extend .underline; 
+                        width: 70px;
+                        /*nasledio sve vrednosti samo promeili sirinu*/
+        }
+    }
+    h2{
+        margin: 20px 0;
+        font-size: 2.3rem;
+    }
+    button {
+        @include btn;
+    }
+    
+}
+    }
+}
+
+/*****************************
+CALL TO ACTION STYLE
+*****************************/
+.cta {
+    background-image: linear-gradient(rgba(0,0, 0, .5), rgba(0,0,0, .5) ), url(./img/cta.jpg);
+    height: 60vh;
+    
+    @include pozadinskeSlike;
+    h4{
+        font-size: 1.7rem;
+        font-weight: 300;
+        font-family: $bodyFont;
+        &::after {
+            @extend .underline
+        }
+        @media (max-width: 768px){
+            font-size: 1.2rem;
+            margin-top: 20px;
+         }
+    }
+} h2{
+    font-size: 6rem;
+    @media (max-width: 768px){
+        font-size: 3rem;
+     }
+}
+
+
+/********************************
+GALERIJA STYLE
+*********************************/
+
+.galerija {
+    display: flex;
+    padding: $padding;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     article {
+        flex: 0 0 48%;
+      
+        @media (max-width: 768px){
+            flex: 0 0 100%;
+         }
+        margin-bottom: 60px;
+     }   
+     img {
+        width: 100%;
+        border: 15px solid $white;
+        border-radius: 20px ;
+        box-shadow: 0 0 20px #999;
+        &:hover {
+            transform: scale(1.1);
+            transition-duration: .7s ;
+            border: 15px solid $orange;
+        }
+     }
+}
+
+/**********************************
+FOOTER STYLE
+*******************************/
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background: $gray;
+    color: $white;
+    a{
+        color: $orange;
+        margin: 0 20px;
+    i{
+        font-size: 2rem;
+    }
+        &:hover{
+            color: $lightGray;
+            transition: $transition;
+        }
+    }
+    p{
+        color: $lightGray;
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+}
+/******************************
+RESPONSIVE DESIGN
+*******************************/ 
+
