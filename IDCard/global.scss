@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 80%;
+    
+    background-color: rgb(85, 84, 84);
+    justify-content: center;
+    margin: 0 auto;
+}
+section {
+    margin-bottom: 80px;
+    
+}
+footer{
+   @include footer; border: 1px solid white;
+   color: $hdLetter;
+   font-size: 1.2rem;
+   padding: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+@import 'global';
+
+
+header {
+    
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    
+    h1{
+        // display: block;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-transform: uppercase;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+       
+        
+    }
+    img{
+        margin: 0 auto;
+      
+    }
+}
+
+.table1 {
+   
+   @include tableProp;
+
+    th {
+        @include tableHeader;
+        
+    }
+    p{
+        @include headerP;
+    }
+    tr{
+        &:nth-child(odd){
+            background-color: lightcyan;
+        }
+        &:nth-child(even){
+            background-color: darkcyan;
+        }
+        td{
+            font-size: 20px;
+        }
+    }
+}
+
+
+

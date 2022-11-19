@@ -1,0 +1,30 @@
+@mixin tableHeader {
+    background-color: $hdBG;
+    color: $hdLetter;
+    font-size: 2rem;
+    padding: 10px;
+    
+}
+@mixin headerP {
+    position: relative;
+    left: -500px;
+}
+
+@mixin tableProp {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    
+
+}
+
+@mixin footer {
+    border: 1px solid white;
+    color: $hdLetter;
+    font-size: 1.2rem;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
